@@ -20,10 +20,6 @@ public class RecipeEntity {
     @Column(name = "TYPE")
     private String type;
 
-    @Column(name = "CREATION_DATE")
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date creationDateTime;
 
     @Column(name = "SERVING_CAPACITY")
     private Integer servingCapacity;

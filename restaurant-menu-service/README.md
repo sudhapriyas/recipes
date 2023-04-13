@@ -1,7 +1,7 @@
-# recipe-services
+# restaurant - menu recipe-services
 Recipe is designed to add new recipe details in the database and filter the recipes based on the filter criteria
 
-### System Design
+### software Design
 Restaurant Menu Service is microservice based layered RESTful Web Service.
 - Top layer, which is main interface available for integration and interaction with front-end or consumers
 - Service Layer
@@ -11,9 +11,9 @@ Restaurant Menu Service is microservice based layered RESTful Web Service.
   - it mainly focuses ORM, we use default JPA repository.
 - Persistence Layer
   - it is responsible for the the persisting the data to DB
-  - H2 database used in Dev environment & mysql for prod environment.
+  - H2 database used in Dev environment & mysql/oracle sql developer for prod environment.
 
-### Tech stacks
+### Tech details
 Feature | Framework used
 ------------ | -------------
 ReSTful API | [Springboot](https://spring.io/projects/spring-boot)
@@ -35,7 +35,8 @@ Integration Tests | Rest Assured [RestAssured](https://rest-assured.io/)
 * **Execution on Development profile with Embedded H2 Database**
   - In Development Mode, by default web service uses [Embedded H2 database](https://spring.io/guides/gs/accessing-data-jpa/) for persisting and retrieving recipes details.
   - Command to execute:
-    --> Run main application RestaurantMenuServiceApplication.java
+    --> java -jar target/restaurant-menu-service-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+  - restaurant-menu-service-0.0.1-SNAPSHOT.jar
   - On successfull start, one should notice log message on console `Tomcat started on port(s): 9000 (http)` and have web service listening for web requests at port 9000
   - it also creates `RECIPES` table and load default data for dev environment
 
@@ -54,7 +55,7 @@ API End Point | Method | Purpose | Request | Response
 /recipe | PUT    | modify the existing recipe based on information provide   | RecipeVariant Mode        | modified RecipeVariant Model with 201 on Success, 400 for failure       
 
 
-### Future improvements
+### Next Actions/Improvements
 - object transformations can be done through [mapStruct](https://mapstruct.org/)
-- improvements with swagger documentation 
+- Can include swagger documentation 
 

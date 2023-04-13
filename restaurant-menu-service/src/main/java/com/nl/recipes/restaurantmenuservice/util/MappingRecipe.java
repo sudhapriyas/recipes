@@ -85,7 +85,7 @@ import java.util.stream.Collectors;
         }
 
         /**
-         * converts Ingredients List to Json string
+         * transform Ingredients List to Json string
          *
          */
         public static String convertToJSONString(List<IngredientVariant> ingredientVOList) {
